@@ -11,7 +11,7 @@ function resetStyle() {
     if (target.value) target.value.style.removeProperty('transform');
 }
 
-function handleMouseMove(e) {
+function handleMouseMove() {
     if (!target.value || isOutside.value) return;
 
     const { left, top, width, height } =
@@ -32,7 +32,7 @@ function handleMouseMove(e) {
                 <div>
                     <span class="text-xl font-bold block pb-2">{{
                         title
-                    }}</span>
+                        }}</span>
                     <p class="text-sm italic">
                         <slot />
                     </p>
