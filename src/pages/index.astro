@@ -1,0 +1,60 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.vue";
+import IconExternal from "../components/icons/External.vue";
+
+const socials = [
+  {
+    key: "LinkedIn",
+    href: "https://www.linkedin.com/in/christof-kuba-270b61267/",
+    text: "in/christof-kuba",
+  },
+  {
+    key: "Github",
+    href: "https://github.com/chrisdkk",
+    text: "@chrisdkk",
+  },
+];
+---
+
+<Layout title="Welcome">
+  <h1 class="mt-16 mb-8">
+    Hi, I'm <span
+      class="bg-clip-text text-transparent bg-gradient-to-tr from-teal-400 via-orange-400 to-violet-200"
+      >Christof</span
+    >
+  </h1>
+
+  <div class="flex gap-4 items-center">
+    <img
+      src="/profile.jpg"
+      alt="This is me, Christof!"
+      class="rounded-full border border-teal-900 size-20 transition-all duration-500 cursor-grab shadow-lg
+             hover:shadow-teal-500 shadow-orange-400"
+    />
+
+    <p>
+      I'm a full-time-nerd, learning web development and building games in my
+      free time. There's a whole page
+      <a href="/about">about myself</a> and why it's <em>awesome</em> to work with
+      me.
+    </p>
+  </div>
+
+  <h2 class="mt-8">You can find me here:</h2>
+
+  <ul>
+    {
+      socials.map((social) => (
+        <li>
+          {social.key}:
+          <a href={social.href} target="_blank">
+            {social.text} <IconExternal class="inline" />
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+
+  <h2 class="mt-8">I also make some stuff</h2>
+</Layout>
